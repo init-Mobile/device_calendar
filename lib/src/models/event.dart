@@ -59,7 +59,6 @@ class Event {
       this.url,
       required this.availability,
       this.location,
-      this.url,
       this.allDay = false});
 
   Event.fromJson(Map<String, dynamic>? json) {
