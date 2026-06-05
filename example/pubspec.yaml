@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   uuid: ^3.0.6
-  flutter_timezone: ^3.0.1
   device_calendar:
     path: ../
 
