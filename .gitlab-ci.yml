@@ -1,0 +1,15 @@
+stages:
+  - analyze
+  - publish
+
+.publish:
+  prepare:
+    - flutter config --enable-swift-package-manager
+
+include:
+  - component: $CI_SERVER_FQDN/development-cop/flutter/base-pipeline/flutter-setup@2.8.1
+    inputs:
+      artifactory_user: $GROUP_ARTIFACTORY_USER
+      artifactory_token: $GROUP_ARTIFACTORY_TOKEN
+  - component: $CI_SERVER_FQDN/development-cop/flutter/base-pipeline/flutter-dependency-check@2.8.1
+  - component: $CI_SERVER_FQDN/development-cop/flutter/base-pipeline/flutter-publish@2.8.1
